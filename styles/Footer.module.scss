@@ -1,0 +1,39 @@
+@use "variables";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px variables.$padding_X;
+  background-color: variables.$color_dark;
+  color: variables.$color_light;
+   margin-top: auto;
+}
+
+.about {
+  max-width: 50%;
+}
+
+.aboutText {
+  margin: 0;
+  font-size: 1em;
+}
+
+.social {
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 5px 0;
+
+      a {
+        color: variables.$color_light;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
