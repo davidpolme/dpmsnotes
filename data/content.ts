@@ -1,5 +1,3 @@
-import golangBg from "@/public/images/golangbg.png";
-
 export const headerLinks = [
   { id: 1, label: "Inicio", path: "/" },
   { id: 2, label: "Conóceme", path: "/conoceme" },
@@ -20,7 +18,8 @@ export const itemsData = [
     id: 1,
     title: "Proyectos",
     description: "Explora algunos de mis proyectos en software y tecnología.",
-    image: golangBg,
+    image:
+      "https://bairesdev.mo.cloudinary.net/blog/2023/08/golang.jpg?tx=w_1920,q_auto",
     alt: "Proyectos",
     link: "/proyectos",
   },
