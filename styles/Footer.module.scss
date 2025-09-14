@@ -11,14 +11,12 @@
 }
 
 .logo {
-   margin-bottom: 0;
+  margin-bottom: 0;
   padding: 0;
   display: flex;
-  img {
-    height: 2rem;
-    border-radius: 3px;
+  :nth-child(1) {
+    border-radius: 2px;
   }
- 
 }
 
 .about {
