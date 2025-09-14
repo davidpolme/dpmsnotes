@@ -1,12 +1,12 @@
 import styles from "@/styles/Items.module.scss";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
 type Item = {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData | string;
   alt: string;
   link: string;
 };

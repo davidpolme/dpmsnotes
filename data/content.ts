@@ -1,9 +1,10 @@
+import golangBg from "@/public/images/golangbg.png";
+
 export const headerLinks = [
   { id: 1, label: "Inicio", path: "/" },
   { id: 2, label: "Conóceme", path: "/conoceme" },
   { id: 3, label: "Proyectos", path: "/proyectos" },
   { id: 4, label: "Blog", path: "/blog" },
-  // { id: 5, label: "YouTube", path: "https://www.youtube.com/@hiitus6183" },
 ];
 
 export const welcomeData = {
@@ -19,43 +20,10 @@ export const itemsData = [
     id: 1,
     title: "Proyectos",
     description: "Explora algunos de mis proyectos en software y tecnología.",
-    image: "/images/golangbg.png",
+    image: golangBg,
     alt: "Proyectos",
     link: "/proyectos",
   },
-  // {
-  //   id: 2,
-  //   title: "Blog",
-  //   description: "Reflexiones, notas técnicas y aprendizajes.",
-  //   image: "/images/jesus-kiteque.jpg",
-  //   alt: "Imagen de bienvenida",
-  //   link: "/blog",
-  // },
-  // {
-  //   id: 3,
-  //   title: "Canal de YouTube",
-  //   description: "Contenido sobre programación, tecnología y aprendizajes.",
-  //   image: "/images/szabo-viktor.jpg",
-  //   alt: "YouTube",
-  //   link: "https://www.youtube.com/@hiitus6183",
-  // },
-  // {
-  //   id: 4,
-  //   title: "LeetCode",
-  //   description: "Ejercicios de algoritmos y retos de programación.",
-  //   image: "/images/leetcode.jpg",
-  //   alt: "LeetCode",
-  //   link: "https://leetcode.com/u/davidpolme/",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Libros",
-  //   description:
-  //     "Algunas ideas de los libros que me han marcado.",
-  //   image: "/images/books.jpg",
-  //   alt: "Libros",
-  //   link: "/libros",
-  // },
 ];
 
 export const footerData = {
