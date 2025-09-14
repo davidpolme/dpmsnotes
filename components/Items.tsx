@@ -35,18 +35,19 @@ export default function Items({ data, columns = 3 }: ItemsProps) {
                 height={300}
                 className={styles.cardImage}
               />
+              <div className={styles.cardContent}>
+                <Link
+                  href={item.link}
+                  {...(isExternal
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className={styles.cardTitle}
+                >
+                  {item.title}
+                </Link>
 
-              <Link
-                href={item.link}
-                {...(isExternal
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-                className={styles.cardTitle}
-              >
-                {item.title}
-              </Link>
-
-              <p className={styles.cardDescription}>{item.description}</p>
+                <p className={styles.cardDescription}>{item.description}</p>
+              </div>
             </div>
           );
         })}
