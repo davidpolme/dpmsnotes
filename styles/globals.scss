@@ -1,0 +1,23 @@
+@use "variables";
+
+body {
+  margin: 0;
+  background-color: variables.$color_light;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 100%; // equivale a 16px en la mayoría de navegadores
+}
+
+main {
+  flex: 1;
+}
