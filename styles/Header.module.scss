@@ -3,8 +3,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid black;
   margin-bottom: 50px;
+  box-shadow: 0 0 1px variables.$color_dark;
   padding: 0 variables.$padding_X;
 }
 
@@ -19,12 +19,7 @@
   font-weight: lighter;
   font-family: "Pacifico", cursive;
   margin: 0;
-  font-size: clamp(2rem, 5vw, 5rem);
-}
-
-.subtitle {
-  padding-left: 10px;
-  font-size: 0.8em;
+  font-size: clamp(1rem, 5vw, 1rem);
 }
 
 .nav {
@@ -36,7 +31,7 @@
 .item {
   list-style: none;
   padding-right: 30px;
-  font-size: 1em;
+  font-size: 0.7em;
   font-weight: bold;
 
   a {
