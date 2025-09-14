@@ -10,9 +10,6 @@ export default function Header({ links }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.logo}>
         <h1 className={styles.title}>DPMsNotes</h1>
-        <h2 className={styles.subtitle}>
-          El blog de <br /> David Polania
-        </h2>
       </div>
 
       <ul className={styles.nav}>

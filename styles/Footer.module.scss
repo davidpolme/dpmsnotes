@@ -2,15 +2,29 @@
 
 .footer {
   display: flex;
-  justify-content: space-between;
-  padding: 20px variables.$padding_X;
+  align-items: center;
+  justify-content: center;
+  padding: 3px variables.$padding_X;
   background-color: variables.$color_dark;
   color: variables.$color_light;
-   margin-top: auto;
+  margin-top: auto;
+}
+
+.logo {
+   margin-bottom: 0;
+  padding: 0;
+  display: flex;
+  img {
+    height: 2rem;
+    border-radius: 3px;
+  }
+ 
 }
 
 .about {
   max-width: 50%;
+  display: flex;
+  align-self: center;
 }
 
 .aboutText {
@@ -22,6 +36,9 @@
   ul {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
 
     li {
       margin: 5px 0;
