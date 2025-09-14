@@ -1,0 +1,43 @@
+@use "variables";
+
+.items {
+  padding: 0 variables.$padding_X;
+  margin: 10px 0;
+}
+
+.cardGroup {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px #4c66fb67;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cardContent {
+  background-color: variables.$color_light;
+  height: 100%;
+}
+
+.cardTitle {
+  font-size: 1em;
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cardDescription {
+  font-size: 0.6em;
+}
