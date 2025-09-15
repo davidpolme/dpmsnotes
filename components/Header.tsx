@@ -1,15 +1,21 @@
 import styles from "@/styles/Header.module.scss";
 import Link from "next/link";
+import { Pacifico } from "next/font/google";
 
 type HeaderProps = {
   links: { label: string; path: string }[];
 };
 
+const pacifico = Pacifico({
+  weight: "400",
+  subsets: ["latin"],
+});
+
 export default function Header({ links }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <h1 className={styles.title}>DPMsNotes</h1>
+        <h1 className={`${styles.title} ${pacifico.className}`}>DPMsNotes</h1>
       </div>
 
       <ul className={styles.nav}>
