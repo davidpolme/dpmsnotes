@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./../styles/globals.scss";
+import { footerData, headerLinks } from "@/content/content";
 
 export const metadata: Metadata = {
   title: "DPMsNotes",
-  description: "El blog de David Polania",
+  description: "El blog de David Polanía Mejía",
 };
 
 export default function RootLayout({
@@ -19,7 +22,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Header links={headerLinks} />
+        {children}
+        <Footer about={footerData.about} social={footerData.social} />
+      </body>
     </html>
   );
 }

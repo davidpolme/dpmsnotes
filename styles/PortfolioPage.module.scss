@@ -1,0 +1,17 @@
+.portfolioPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .itemsWrapper {
+    display: grid;
+    gap: 2rem;
+  }
+}
