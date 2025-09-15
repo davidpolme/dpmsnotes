@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { ReactNode } from "react";
 import "@/styles/MDXComponents.module.scss";
 
@@ -8,7 +8,7 @@ export function MyButton({ children }: { children: ReactNode }) {
 
 // Aquí defines qué etiquetas HTML de Markdown se transforman en componentes React
 export const MDXComponents = {
-  img: (props: any) => (
+  img: (props: ImageProps) => (
     <Image
       {...props}
       alt={props.alt || ""}
