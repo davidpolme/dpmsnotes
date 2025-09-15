@@ -1,7 +1,7 @@
 export const headerLinks = [
   { id: 1, label: "Inicio", path: "/" },
   { id: 2, label: "Conóceme", path: "/conoceme" },
-  { id: 3, label: "Proyectos", path: "/proyectos" },
+  { id: 3, label: "Portfolio", path: "/portfolio" },
   { id: 4, label: "Blog", path: "/blog" },
 ];
 
@@ -13,15 +13,15 @@ Además de programar, me encanta la música: toco guitarra y estoy aprendiendo p
   button: "Conóceme",
 };
 
-export const itemsData = [
+export const sectionsData = [
   {
     id: 1,
-    title: "Proyectos",
+    title: "Portfolio",
     description: "Explora algunos de mis proyectos en software y tecnología.",
     image:
       "https://bairesdev.mo.cloudinary.net/blog/2023/08/golang.jpg?tx=w_1920,q_auto",
-    alt: "Proyectos",
-    link: "/proyectos",
+    alt: "Portfolio",
+    link: "/portfolio",
   },
 ];
 
@@ -35,3 +35,16 @@ Me apasionan la tecnología, la música y seguir aprendiendo cada día.`,
     { label: "Dev.to", href: "https://dev.to/davidpolme" },
   ],
 };
+
+
+export const portfolioProjects = [
+   {
+    id: 1,
+    title: "Portfolio",
+    description: "Explora algunos de mis proyectos en software y tecnología.",
+    image:
+      "https://bairesdev.mo.cloudinary.net/blog/2023/08/golang.jpg?tx=w_1920,q_auto",
+    alt: "Portfolio",
+    link: "/portfolio",
+  }
+];
