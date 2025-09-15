@@ -1,6 +1,7 @@
 @use "variables";
 
 body {
+  font-family: var(--font-lato), sans-serif;
   margin: 0;
   background-color: variables.$color_light;
   font-family: "Lato", sans-serif;

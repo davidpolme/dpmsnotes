@@ -1,12 +1,7 @@
 import styles from "@/styles/Footer.module.scss";
 import Image from "next/image";
 
-type FooterProps = {
-  about: string;
-  social: { label: string; href: string }[];
-};
-
-export default function Footer({ about, social }: FooterProps) {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <section className={styles.logo}>

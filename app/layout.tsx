@@ -3,6 +3,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./../styles/globals.scss";
 import { footerData, headerLinks } from "@/content/content";
+import { Lato } from "next/font/google";
+
+const lato = Lato({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-lato",
+});
 
 export const metadata: Metadata = {
   title: "DPMsNotes",
@@ -16,16 +23,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css?family=Lato|Pacifico&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={lato.variable}>
         <Header links={headerLinks} />
         {children}
-        <Footer about={footerData.about} social={footerData.social} />
+        <Footer/>
       </body>
     </html>
   );
