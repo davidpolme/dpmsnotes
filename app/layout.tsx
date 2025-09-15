@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./../styles/globals.scss";
-import { footerData, headerLinks } from "@/content/content";
+import { headerLinks } from "@/content/content";
 import { Lato } from "next/font/google";
 
 const lato = Lato({
