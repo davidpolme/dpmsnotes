@@ -2,7 +2,7 @@
 
 .items {
   padding: 0 variables.$padding_X;
-  margin: 10px 0;
+  margin: 10px 0 50px 0;
 }
 
 .cardGroup {
@@ -11,10 +11,10 @@
 }
 
 .card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px #4c66fb67;
+  position: relative;
+  border-radius: variables.$border_radius;
   overflow: hidden;
+  box-shadow: 0 4px 10px #4c66fb67;
   text-align: center;
 }
 
@@ -22,11 +22,19 @@
   width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
 }
 
 .cardContent {
-  background-color: variables.$color_light;
-  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  color: variables.$color_light;
+  text-align: left;
 }
 
 .cardTitle {
@@ -36,6 +44,7 @@
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+  color: variables.$color_light;
 }
 
 .cardDescription {

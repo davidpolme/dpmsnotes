@@ -3,12 +3,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./../styles/globals.scss";
 import { headerLinks } from "@/content/content";
-import { Lato } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const lato = Lato({
+const roboto = Roboto({
   weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-lato",
+  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={lato.variable}>
+      <body className={roboto.variable}>
         <Header links={headerLinks} />
         {children}
         <Footer/>

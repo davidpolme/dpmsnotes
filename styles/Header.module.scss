@@ -6,6 +6,12 @@
   margin-bottom: 50px;
   box-shadow: 0 0 1px variables.$color_dark;
   padding: 0 variables.$padding_X;
+  background: linear-gradient(
+    to right,
+    variables.$color_contrast 0%,
+    variables.$color_dark 50%,
+    variables.$color_contrast 100%
+  );
 }
 
 .logo {
@@ -15,33 +21,33 @@
 }
 
 .title {
-  color: variables.$color_contrast;
+  color: variables.$color_light;
   font-weight: lighter;
   font-family: "Pacifico", cursive;
   margin: 0;
-  font-size: clamp(1rem, 5vw, 1rem);
+  font-size: clamp(1.5rem, 5vw, 1rem);
+  text-decoration: none;
 }
 
 .nav {
   display: flex;
   align-items: center;
   margin: 0;
+  color: variables.$color_light;
 }
 
 .item {
   list-style: none;
   padding-right: 30px;
-  font-size: 0.7em;
+  font-size: 1rem;
   font-weight: bold;
-
   a {
     text-decoration: none;
-    color: variables.$color_dark;
+    color: white;
     font-weight: bold;
 
     &:hover {
       text-decoration: underline;
-      color: variables.$color_contrast;
     }
   }
 }
