@@ -1,5 +1,6 @@
+@use "variables"; 
+
 .portfolioPage {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 
@@ -8,6 +9,7 @@
     font-weight: bold;
     margin-bottom: 2rem;
     text-align: center;
+    color: variables.$color_light;
   }
 
   .itemsWrapper {
