@@ -4,8 +4,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3px variables.$padding_X;
-  background-color: variables.$color_dark;
+  padding: variables.$padding_Y variables.$padding_X;
+    background: linear-gradient(
+    to right,
+    variables.$color_dark 0%,
+    variables.$color_dark 15%,
+    variables.$color_contrast 45%,
+    variables.$color_contrast 50%,
+    variables.$color_contrast 55%,
+    variables.$color_dark 85%,
+    variables.$color_dark 100%
+  );
   color: variables.$color_light;
   margin-top: auto;
 }
