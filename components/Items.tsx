@@ -16,7 +16,7 @@ type ItemsProps = {
   columns?: number; // número de ítems por fila
 };
 
-export default function Items({ data, columns = 3 }: ItemsProps) {
+export default function Items({ data, columns = 2 }: ItemsProps) {
   return (
     <section className={styles.items}>
       <div

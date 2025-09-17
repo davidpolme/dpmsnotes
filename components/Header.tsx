@@ -15,7 +15,9 @@ export default function Header({ links }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <h1 className={`${styles.title} ${pacifico.className}`}>DPMsNotes</h1>
+        <Link href="/" className={`${styles.title} ${pacifico.className}`}>
+          DPMsNotes
+        </Link>
       </div>
 
       <ul className={styles.nav}>

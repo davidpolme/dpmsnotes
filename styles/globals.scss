@@ -1,10 +1,10 @@
 @use "variables";
 
 body {
-  font-family: var(--font-lato), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   margin: 0;
-  background-color: variables.$color_light;
-  font-family: "Lato", sans-serif;
+  background-color: variables.$background_color;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
