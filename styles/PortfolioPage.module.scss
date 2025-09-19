@@ -1,7 +1,6 @@
 @use "variables"; 
 
 .portfolioPage {
-  margin: 0 auto;
   padding: 2rem;
 
   h1 {
@@ -13,7 +12,6 @@
   }
 
   .itemsWrapper {
-    display: grid;
     gap: 2rem;
   }
 }

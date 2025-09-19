@@ -13,16 +13,20 @@ type Item = {
 
 type ItemsProps = {
   data: Item[];
-  columns?: number; // número de ítems por fila
 };
 
-export default function Items({ data, columns = 2 }: ItemsProps) {
+export default function Items({ data }: ItemsProps) {
+  if (!data || data.length === 0) {
+    return (
+      <section className={styles.items}>
+        <p className={styles.noItems}>Aún no hay elementos</p>
+      </section>
+    );
+  }
+
   return (
     <section className={styles.items}>
-      <div
-        className={styles.cardGroup}
-        style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}
-      >
+      <div className={styles.cardGroup}>
         {data.map((item) => {
           const isExternal = item.link.startsWith("http");
 

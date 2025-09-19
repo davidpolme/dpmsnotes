@@ -1,0 +1,71 @@
+---
+title: "Arquitectura Hexagonal: una forma de organizar aplicaciones"
+slug: "arquitectura-hexagonal"
+date: "2025-09-19"
+description: "Introducción a la arquitectura hexagonal (Ports and Adapters) y cómo ayuda a construir aplicaciones más mantenibles y escalables."
+image: "https://scalastic.io/assets/img/hexagonal-architecture.jpg"
+tags: ["Arquitectura", "Backend", "Buenas Prácticas", "Domain Driven Design"]
+---
+
+# Arquitectura Hexagonal 🛠️
+
+En el desarrollo de software, uno de los retos más grandes es **mantener la flexibilidad del código** cuando la aplicación crece.  
+La **arquitectura hexagonal**, también llamada **Ports and Adapters**, es un enfoque que busca separar la lógica de negocio de los detalles externos como bases de datos, frameworks o APIs.
+
+---
+
+## ¿Qué problema resuelve?
+
+En muchos proyectos, la lógica de negocio queda fuertemente acoplada a la infraestructura.  
+Esto trae consecuencias como:
+- Dificultad para cambiar de base de datos.  
+- Código complicado de probar.  
+- Dependencia excesiva de frameworks.  
+
+La arquitectura hexagonal propone una solución: **poner el dominio en el centro**.
+
+---
+
+## Principios clave
+
+1. **Dominio en el centro**  
+   La lógica de negocio no depende de nada externo.  
+
+2. **Puertos (Ports)**  
+   Son interfaces que definen cómo se comunica el dominio con el exterior.  
+
+3. **Adaptadores (Adapters)**  
+   Son implementaciones concretas de esos puertos (ej: un repositorio que usa MongoDB o Postgres).  
+
+---
+
+## Ejemplo simple
+
+Imagina un servicio de gestión de tareas:
+
+- **Dominio**: reglas para crear, actualizar o completar una tarea.  
+- **Puerto**: una interfaz `TaskRepository` con métodos como `save` o `findById`.  
+- **Adaptadores**:  
+  - Uno que persiste en **memoria** (útil para pruebas).  
+  - Otro que usa **Postgres** en producción.  
+
+El dominio no sabe ni le importa qué base de datos se usa. Solo conoce el contrato definido en el puerto.
+
+---
+
+## Beneficios
+
+- **Testeo sencillo**: podemos probar el dominio con adaptadores en memoria.  
+- **Flexibilidad tecnológica**: cambiar de framework o base de datos es menos doloroso.  
+- **Código más limpio y mantenible**.  
+
+---
+
+## Conclusión
+
+La **arquitectura hexagonal** no es una bala de plata, pero ayuda mucho a mantener proyectos escalables y bien organizados.  
+Personalmente, la uso como referencia cuando quiero que una aplicación crezca sin convertirse en un “monolito espagueti” 🍝.
+
+---
+
+👉 En próximos posts puedo mostrar un ejemplo práctico en **Go** o **Node.js**, con código real implementando esta arquitectura.
