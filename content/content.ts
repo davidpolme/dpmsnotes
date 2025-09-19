@@ -1,6 +1,6 @@
 export const headerLinks = [
   { id: 1, label: "Inicio", path: "/" },
-  // { id: 2, label: "Conóceme", path: "/conoceme" },
+  { id: 2, label: "Conóceme", path: "/about-me" },
   { id: 3, label: "Portfolio", path: "/portfolio" },
   { id: 4, label: "Blog", path: "/blog" },
 ];
@@ -27,9 +27,9 @@ export const sectionsData = [
     id: 2,
     title: "Blog",
     description:
-    "Lee mis artículos sobre desarrollo, tecnología y experiencias personales.",
+      "Lee mis artículos sobre desarrollo, tecnología y experiencias personales.",
     image:
-    "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2668&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2668&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Blog",
     link: "/blog",
   },
@@ -38,41 +38,10 @@ export const sectionsData = [
     title: "Conóceme",
     description:
       "Saber más sobre mí, mi experiencia y mis intereses fuera de la programación.",
-    image:
-      "https://lh3.googleusercontent.com/pw/AP1GczOJ4TRyHmTQiKQEV0MhIsGtrhDuWqXvIpg_8W1uEOPX70x0Wfc8XcC7pvQamoQkrYfkx-fceRydkHPm7srIlPQKpjwTZsH5us1MVrUS07InFn00KFUe58QAyoi_QJbyzG19uLtb2s5ZqwF44Zqh3gaRbA=w1280-h722-s-no-gm",
-    alt: "Blog",
-    link: "/blog",
+    image: "https://avatars.githubusercontent.com/u/17372233?v=4",
+    alt: "Acerca de mí",
+    link: "/about-me",
   },
-  // {
-  //   id: 3,
-  //   title: "Youtube",
-  //   description:
-  //   "Mira mis videos sobre programación, tecnología y más en mi canal de YouTube.",
-  //   image:
-  //   "https://images.unsplash.com/photo-1746608943506-bb1663f3f61a?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   alt: "Youtube",
-  //   link: "/youtube",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Ajedrez",
-  //   description:
-  //   "Descubre mis partidas y análisis de ajedrez en mi perfil de Chess.com.",
-  //   image:
-  //   "https://images.unsplash.com/photo-1739416333363-4b01dd9874c0?q=80&w=2371&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   alt: "Blog",
-  //   link: "/blog",
-  // },
-  // {
-  //   id: 5,
-  //   title: "Música",
-  //   description:
-  //     "Escucha mis composiciones y covers en mi perfil de SoundCloud.",
-  //   image:
-  //     "https://images.unsplash.com/photo-1485579149621-3123dd979885?q=80&w=3131&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //   alt: "Blog",
-  //   link: "/blog",
-  // },
 ];
 
 export const footerData = {
