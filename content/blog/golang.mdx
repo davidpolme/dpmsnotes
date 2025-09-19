@@ -1,0 +1,67 @@
+---
+title: "Por qué Go (Golang) es uno de mis lenguajes favoritos"
+slug: "golang-introduccion"
+date: "2025-09-19"
+description: "Una introducción a Go: su filosofía, ventajas y por qué lo considero una gran herramienta para el desarrollo backend."
+image: "https://stepmediasoftware.com/wp-content/uploads/2025/02/what-is-golang-used-for-1200x640.webp"
+tags: ["Golang", "Backend", "Lenguajes de programación", "Buenas prácticas"]
+---
+
+# Go (Golang): simple, rápido y eficiente ⚡
+
+Go es un lenguaje creado en Google en 2009 con un objetivo muy claro:  
+**hacer el desarrollo de software más simple, eficiente y productivo**, especialmente en sistemas concurrentes y backend.
+
+En este post quiero contarte por qué me gusta trabajar con Go y dónde creo que brilla más.
+
+---
+
+## Filosofía de Go
+
+Go fue diseñado con tres ideas principales en mente:
+
+- **Simplicidad** → la sintaxis es pequeña y fácil de aprender.  
+- **Rendimiento** → compilado y con una ejecución muy rápida.  
+- **Productividad en equipo** → el código es fácil de leer y mantener.  
+
+En pocas palabras: *menos magia, más claridad*.
+
+---
+
+## Características que me encantan
+
+1. **Tipado estático y seguro** 🛡️  
+   Go detecta muchos errores en tiempo de compilación.  
+
+2. **Concurrencia con goroutines** 🌀  
+   Manejar miles de tareas al mismo tiempo es natural y ligero.  
+
+3. **Compilación rápida** 🚀  
+   Nada de esperas eternas, el ciclo de desarrollo es ágil.  
+
+4. **Portabilidad** 🌍  
+   Con `go build` puedes compilar binarios para diferentes sistemas sin problemas.  
+
+---
+
+## Ejemplo rápido
+
+Un servidor HTTP en Go puede escribirse así de simple:
+
+```go
+package main
+
+import (
+  "fmt"
+  "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, "¡Hola desde Go! 🚀")
+}
+
+func main() {
+  http.HandleFunc("/", handler)
+  fmt.Println("Servidor escuchando en http://localhost:8080")
+  http.ListenAndServe(":8080", nil)
+}

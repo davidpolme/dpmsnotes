@@ -9,7 +9,7 @@ export default function PortfolioPage() {
     <main className={styles.portfolioPage}>
       <h1>Portfolio</h1>
       <div className={styles.itemsWrapper}>
-        <Items data={items} columns={3} />
+        <Items data={items} />
       </div>
     </main>
   );

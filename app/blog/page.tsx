@@ -9,7 +9,7 @@ export default function BlogPage() {
     <main className={styles.portfolioPage}>
       <h1>Blog</h1>
       <div className={styles.itemsWrapper}>
-        <Items data={items} columns={2} />
+        <Items data={items} />
       </div>
     </main>
   );
