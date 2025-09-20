@@ -17,7 +17,6 @@
   overflow: hidden;
   box-shadow: 0 4px 10px #4c66fb67;
   text-align: center;
-
   display: flex;
   flex-direction: column;
 }
@@ -37,13 +36,12 @@
   right: 0;             
   width: auto;           
 
-
   padding: 1.5rem;
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   color: variables.$color_light;
   text-align: left;
-  font-size: clamp(0.6rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 1rem);
 
   display: flex;
   flex-direction: column;
@@ -67,7 +65,7 @@
 }
 
 .cardDescription {
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 .noItems {
