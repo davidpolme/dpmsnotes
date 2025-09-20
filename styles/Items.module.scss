@@ -8,18 +8,24 @@
 .cardGroup {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
-  position: relative; 
+  position: relative;
   border-radius: variables.$border_radius;
+  box-shadow: 0 6px 15px rgba(76, 102, 251, 0.29);
   overflow: hidden;
-  box-shadow: 0 4px 10px #4c66fb67;
   text-align: center;
-
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 10px rgba(76, 102, 251, 0.789);
+  }
 }
 
 .cardImage {
@@ -34,16 +40,15 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;             
-  width: auto;           
-
+  right: 0;
+  width: auto;
 
   padding: 1.5rem;
   background-color: transparent;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   color: variables.$color_light;
   text-align: left;
-  font-size: clamp(0.6rem, 1vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 1rem);
 
   display: flex;
   flex-direction: column;
@@ -54,7 +59,6 @@
   overflow-wrap: anywhere;
   hyphens: auto;
 }
-
 
 .cardTitle {
   font-size: 1em;
@@ -67,7 +71,7 @@
 }
 
 .cardDescription {
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 .noItems {
