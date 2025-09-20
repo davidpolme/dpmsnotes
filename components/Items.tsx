@@ -31,7 +31,14 @@ export default function Items({ data }: ItemsProps) {
           const isExternal = item.link.startsWith("http");
 
           return (
-            <div key={item.id} className={styles.card}>
+            <Link
+              key={item.id}
+              href={item.link}
+              {...(isExternal
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className={styles.card}
+            >
               <Image
                 src={item.image}
                 alt={item.alt}
@@ -40,19 +47,10 @@ export default function Items({ data }: ItemsProps) {
                 className={styles.cardImage}
               />
               <div className={styles.cardContent}>
-                <Link
-                  href={item.link}
-                  {...(isExternal
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className={styles.cardTitle}
-                >
-                  {item.title}
-                </Link>
-
+                <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
