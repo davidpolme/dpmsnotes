@@ -1,13 +1,13 @@
 import Items from "@/components/Items";
-import { getPortfolioItems } from "@/lib/portfolio";
-import styles from "@/styles/PortfolioPage.module.scss";
+import { getBlogItems } from "@/lib/blog";
+import styles from "@/styles/BlogPage.module.scss";
 import Link from "next/link";
 
 export default function BlogPage() {
-  const items = getPortfolioItems();
+  const items = getBlogItems();
 
   return (
-    <main className={styles.portfolioPage}>
+    <main className={styles.blogPage}>
       <h1>Blog</h1>
 
       <Link href="/" className={styles.backButton}>
