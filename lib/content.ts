@@ -32,12 +32,15 @@ export class ContentFactory {
 
         return {
           id: index + 1,
-          slug,
+          slug: data.slug || slug,
           title: data.title || slug,
           description: data.description || "",
           image: data.image || "/images/placeholder.jpg",
           alt: data.alt || data.title || slug,
-          link: `/${type}/${slug}`, // 👈 dinámico según tipo
+          link: `/${type}/${slug}`,
+          date: data.date || null,
+          tags: data.tags || [],
+          categories: data.categories || [],
         };
       });
   }
