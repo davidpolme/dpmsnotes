@@ -6,7 +6,6 @@ export function MyButton({ children }: { children: ReactNode }) {
   return <button className="my-button">{children}</button>;
 }
 
-// Aquí defines qué etiquetas HTML de Markdown se transforman en componentes React
 export const MDXComponents = {
   img: (props: ImageProps) => (
     <Image
