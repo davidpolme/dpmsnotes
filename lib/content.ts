@@ -32,7 +32,7 @@ export class ContentFactory {
 
         return {
           id: index + 1,
-          slug: data.slug || slug,
+          slug: slug,
           title: data.title || slug,
           description: data.description || "",
           image: data.image || "/images/placeholder.jpg",
