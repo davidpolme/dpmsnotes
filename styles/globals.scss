@@ -22,3 +22,21 @@ html {
 main {
   flex: 1;
 }
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+    white-space: pre-wrap; 
+  word-wrap: break-word;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+}
