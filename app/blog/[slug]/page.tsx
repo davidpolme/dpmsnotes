@@ -3,7 +3,7 @@ import { MDXComponents } from "@/components/MDXComponents";
 import { getBlogItems, getBlogBySlug } from "@/lib/blog";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import styles from "@/styles/ProjectArticle.module.scss";
+import styles from "@/styles/BlogArticle.module.scss";
 
 export async function generateStaticParams() {
   const items = getBlogItems();
@@ -40,7 +40,7 @@ export default async function BlogPostPage({
   if (!post) return notFound();
 
   return (
-    <article className={styles.projectArticle}>
+    <article className={styles.blogArticle}>
       <h1>{post.data.title}</h1>
       {post.data.description && (
         <p className={styles.intro}>{post.data.description}</p>
