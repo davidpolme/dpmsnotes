@@ -10,10 +10,37 @@ const isProd = process.env.NODE_ENV === "production";
 const nextConfig = {
   output: "export",
   images: {
-    unoptimized: true,
+    unoptimized: true, // obligatorio con export estático
     remotePatterns: [
-      { protocol: "https", hostname: "media2.dev.to" },
-      { protocol: "https", hostname: "dev-to-uploads.s3.amazonaws.com" },
+      {
+        protocol: "https",
+        hostname: "media2.dev.to",
+      },
+      {
+        protocol: "https",
+        hostname: "dev-to-uploads.s3.amazonaws.com",
+      },
+      // 🔽 agrega todos los hosts externos que usas en <Image />
+      {
+        protocol: "https",
+        hostname: "img.shields.io",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.vectorlogo.zone",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+      {
+        protocol: "https",
+        hostname: "pandas.pydata.org",
+      },
     ],
   },
   pageExtensions: ["ts", "tsx", "mdx"],

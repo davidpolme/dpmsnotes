@@ -1,4 +1,6 @@
+import Link from "next/link";
 import styles from "@/styles/NotFoundPage.module.scss";
+
 
 export default function NotFound() {
   return (
@@ -7,9 +9,10 @@ export default function NotFound() {
       <p className={styles.message}>
         Lo sentimos, no pudimos encontrar lo que buscabas.
       </p>
-      <a href="/" className={styles.link}>
+      <Link href="/" className={styles.link}>
         Volver al inicio
-      </a>
+      </Link>
     </div>
   );
 }
+  
