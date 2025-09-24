@@ -143,4 +143,19 @@
       font-size: 1rem;
     }
   }
+   .cardGroup {
+    grid-template-columns: 1fr;
+  }
+
+  .cardContent {
+    font-size: 0.9rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
 }
