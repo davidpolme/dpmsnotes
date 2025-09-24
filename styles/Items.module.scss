@@ -8,7 +8,7 @@
 .cardGroup {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
@@ -17,22 +17,55 @@
   box-shadow: 0 6px 15px rgba(76, 102, 251, 0.29);
   overflow: hidden;
   text-align: center;
-  display: flex;
-  flex-direction: column;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  
+
+  aspect-ratio: 1 / 1;
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 10px rgba(76, 102, 251, 0.789);
   }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    background-image: var(--card-img);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    transform: scale(1.08);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.45));
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+.imageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 .cardImage {
-  width: 100%;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   display: block;
 }
 
@@ -41,20 +74,17 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: auto;
-
-  padding: 1.5rem;
-  background-color: transparent;
-  backdrop-filter: blur(20px);
+  height: 20%;
+  padding: 0.8rem 1rem;
   color: variables.$color_light;
-  text-align: left;
-  font-size: clamp(0.8rem, 1vw, 1rem);
+  z-index: 3;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-start;
 
+  font-size: clamp(0.8rem, 1vw, 1rem);
   word-wrap: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
@@ -62,17 +92,15 @@
 
 .cardTitle {
   font-size: 1em;
-  margin: 10px 0 5px 0;
+  margin: 0 0 5px 0;
   font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  cursor: pointer;
   color: variables.$color_light;
 }
 
 .cardDescription {
   font-size: 0.7em;
 }
+
 
 .noItems {
   text-align: center;

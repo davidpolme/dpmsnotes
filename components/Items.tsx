@@ -105,6 +105,8 @@ export default function Items({ data, filter = true }: ItemsProps) {
       <div className={styles.cardGroup}>
         {filteredData.map((item) => {
           const isExternal = item.link.startsWith("http");
+          const imgUrl =
+            typeof item.image === "string" ? item.image : item.image.src;
 
           return (
             <Link
@@ -114,14 +116,23 @@ export default function Items({ data, filter = true }: ItemsProps) {
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
               className={styles.card}
+              style={
+                {
+                  ["--card-img" as any]: `url(${imgUrl})`,
+                } as React.CSSProperties
+              }
             >
-              <Image
-                src={item.image}
-                alt={item.alt}
-                width={400}
-                height={300}
-                className={styles.cardImage}
-              />
+              <div className={styles.imageWrap}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  className={styles.cardImage}
+                  priority={false}
+                />
+              </div>
+
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardDescription}>{item.description}</p>
