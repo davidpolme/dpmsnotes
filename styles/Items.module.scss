@@ -39,7 +39,7 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     filter: blur(10px);
-    transform: scale(1.08);
+    transform: scale(1.5);
     z-index: 1;
     pointer-events: none;
   }
@@ -50,8 +50,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 20%;
-    background: linear-gradient(transparent, rgba(0,0,0,0.45));
+    height: 30%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.45));
     z-index: 2;
     pointer-events: none;
   }
@@ -84,7 +84,7 @@
   justify-content: flex-end;
   align-items: flex-start;
 
-  font-size: clamp(0.8rem, 1vw, 1rem);
+  font-size: clamp(0.9rem, 0.8vw, 1.3rem);
   word-wrap: break-word;
   overflow-wrap: anywhere;
   hyphens: auto;
@@ -100,7 +100,6 @@
 .cardDescription {
   font-size: 0.7em;
 }
-
 
 .noItems {
   text-align: center;
@@ -133,6 +132,7 @@
   }
 }
 
+/*mobile*/
 @media (max-width: 600px) {
   .filters {
     flex-direction: column;
@@ -143,7 +143,14 @@
       font-size: 1rem;
     }
   }
-   .cardGroup {
+  .card {
+    &::after {
+      filter: blur(5px);
+      transform: scale(4);
+      z-index: 1;
+    }
+  }
+  .cardGroup {
     grid-template-columns: 1fr;
   }
 
@@ -157,5 +164,68 @@
 
   .cardDescription {
     font-size: 0.85rem;
+  }
+}
+
+/*tablet*/
+@media (min-width: 601px) and (max-width: 1024px) {
+  .card {
+    &::after {
+      filter: blur(5px);
+      transform: scale(4);
+      z-index: 1;
+    }
+  }
+  .cardGroup {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  .cardContent {
+    font-size: 0.8rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.75rem;
+  }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+  .cardContent {
+    font-size: 1em;
+  }
+
+  .cardTitle {
+    font-size: 1.2em;
+  }
+
+  .cardDescription {
+    font-size: 0.9em;
+  }
+}
+
+/*Pantallas muy grandes*/
+@media (min-width: 6000px) {
+  .cardContent {
+    font-size: 2.5em;
+  }
+
+  .cardTitle {
+    font-size: 3em;
+  }
+
+  .cardDescription {
+    font-size: 2.5em;
+  }
+    .card {
+    &::after {
+      filter: blur(15px);
+      transform: scale(4);
+      z-index: 1;
+    }
   }
 }
