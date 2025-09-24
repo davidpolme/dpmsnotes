@@ -108,6 +108,10 @@ export default function Items({ data, filter = true }: ItemsProps) {
           const imgUrl =
             typeof item.image === "string" ? item.image : item.image.src;
 
+          const cardStyle: React.CSSProperties & { [key: string]: string } = {
+            "--card-img": `url(${imgUrl})`,
+          };
+
           return (
             <Link
               key={item.id}
@@ -116,11 +120,7 @@ export default function Items({ data, filter = true }: ItemsProps) {
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
               className={styles.card}
-              style={
-                {
-                  ["--card-img" as any]: `url(${imgUrl})`,
-                } as React.CSSProperties
-              }
+              style={cardStyle}
             >
               <div className={styles.imageWrap}>
                 <Image
