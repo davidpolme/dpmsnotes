@@ -4,6 +4,7 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
 });
 
+const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig = {
@@ -43,8 +44,8 @@ const nextConfig = {
     ],
   },
   pageExtensions: ["ts", "tsx", "mdx"],
-  basePath: isProd ? "/dpmsnotes" : "",
-  assetPrefix: isProd ? "/dpmsnotes/" : "",
+  basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}/` : "",
 };
 
 export default withMDX(nextConfig);
