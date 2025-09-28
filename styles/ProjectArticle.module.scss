@@ -1,15 +1,26 @@
-@use "variables";
+@use "variables" as v;
 
 .projectArticle {
-  background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(3px);
-  border-radius: variables.$border_radius;
-  border: 2px solid rgba(variables.$color_dark, 0.3);
+  border-radius: v.$border_radius;
   box-shadow: 0 4px 40px #4c66fb67;
   max-width: 800px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 50px auto;
   padding: 2rem;
-  margin-bottom: 50px;
+
+  /* 🌙 Dark */
+  body.dark & {
+    background-color: rgba(v.$background_color_dark_mode, 0.95);
+    border: 2px solid rgba(v.$color_light_dark_mode, 0.2);
+    color: v.$color_light_dark_mode;
+  }
+
+  /* ☀️ Light */
+  body.light & {
+    background-color: rgba(v.$background_color_light_mode, 0.9);
+    border: 2px solid rgba(v.$color_dark_light_mode, 0.3);
+    color: v.$color_font_light_mode;
+  }
 
   h1 {
     font-size: 2.4rem;
@@ -19,8 +30,16 @@
 
   .intro {
     font-size: 1.1rem;
-    color: #555;
     margin-bottom: 1.5rem;
+
+    body.dark & {
+      color: v.$color_light_dark_mode;
+      opacity: 0.8;
+    }
+
+    body.light & {
+      color: #555;
+    }
   }
 
   .content {
@@ -35,10 +54,21 @@
     }
 
     code {
-      background: #f5f5f5;
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
       font-size: 0.9rem;
+
+      /* 🌙 Dark */
+      body.dark & {
+        background: v.$background_color_mid_dark_mode;
+        color: v.$color_light_dark_mode;
+      }
+
+      /* ☀️ Light */
+      body.light & {
+        background: #f5f5f5;
+        color: #333;
+      }
     }
   }
 
@@ -50,15 +80,29 @@
   .backLink {
     display: inline-block;
     padding: 0.6rem 1rem;
-    background: #ececec;
-    color: #333;
     border-radius: 6px;
     font-weight: 500;
     text-decoration: none;
     transition: background 0.2s ease;
 
-    &:hover {
-      background: #dcdcdc;
+    /* 🌙 Dark */
+    body.dark & {
+      background: v.$background_color_mid_dark_mode;
+      color: v.$color_light_dark_mode;
+
+      &:hover {
+        background: v.$background_color_end_dark_mode;
+      }
+    }
+
+    /* ☀️ Light */
+    body.light & {
+      background: #ececec;
+      color: #333;
+
+      &:hover {
+        background: #dcdcdc;
+      }
     }
   }
 }

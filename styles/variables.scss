@@ -1,14 +1,11 @@
-$background_color: #0B0A27;
-$background_color_start: #090925;
-$background_color_mid: #0E0D2E;
-$background_color_end: #0B0A28;
-$color_light: #fff;
-$color_primary: #4446FF;
-$color_primary_dark: #2e2fff;
-$color_dark: #0d0f35;
-$color_contrast: #4446FF;
-$color_font: #000;
-$padding_X: 2rem;
-$padding_Y: 1rem;
+// Variables generales
+$padding_x: 2rem;
+$padding_y: 1rem;
 $border_radius: 0.5rem;
 $max_width: 1200px;
+
+// Reexporta los temas
+@forward "variables_dark_mode.scss";
+@forward "variables_light_mode.scss";
+
+

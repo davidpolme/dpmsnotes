@@ -4,18 +4,17 @@ import { useState } from "react";
 import styles from "@/styles/Header.module.scss";
 import Link from "next/link";
 import { Pacifico } from "next/font/google";
+import { useThemeStore } from "@/store/themeStore";
 
 type HeaderProps = {
   links: { label: string; path: string }[];
 };
 
-const pacifico = Pacifico({
-  weight: "400",
-  subsets: ["latin"],
-});
+const pacifico = Pacifico({ weight: "400", subsets: ["latin"] });
 
 export default function Header({ links }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { darkMode, toggleTheme } = useThemeStore();
 
   return (
     <header className={styles.header}>
@@ -32,6 +31,15 @@ export default function Header({ links }: HeaderProps) {
             <Link href={link.path}>{link.label}</Link>
           </li>
         ))}
+        <li>
+          <button
+            className={styles.toggleTheme}
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {darkMode ? "🌙" : "☀️"}
+          </button>
+        </li>
       </ul>
 
       {/* Hamburger button */}
@@ -51,6 +59,13 @@ export default function Header({ links }: HeaderProps) {
             {link.label}
           </Link>
         ))}
+        <button
+          className={styles.toggleTheme}
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+        >
+          {darkMode ? "🌙" : "☀️"}
+        </button>
       </div>
     </header>
   );

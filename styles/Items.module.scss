@@ -1,14 +1,23 @@
-@use "variables";
+@use "variables" as v;
 
 .items {
-  padding: 0 variables.$padding_X;
+  padding: 0 v.$padding_x;
   margin: 0 0 50px 0;
 }
 
 .noItems {
   text-align: center;
   font-size: 1rem;
-  color: variables.$color_light;
   opacity: 0.7;
   padding: 2rem;
+
+  /* 🌙 Dark */
+  body.dark & {
+    color: v.$color_light_dark_mode;
+  }
+
+  /* ☀️ Light */
+  body.light & {
+    color: v.$color_font_light_mode;
+  }
 }
