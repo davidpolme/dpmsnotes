@@ -20,6 +20,9 @@ export const heroData = {
   buttonLink: "/",
 };
 
+
+
+
 export const sectionsData = [
   {
     id: 1,
@@ -60,7 +63,6 @@ export const sectionsData = [
     link: "/about-me",
   },
 ];
-
 
 export const footerData = {
   about: `Soy David Polanía, ingeniero de software full stack. 

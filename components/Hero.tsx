@@ -35,9 +35,13 @@ export default function Hero({ data }: { data: HeroData }) {
         />
       </section>
       <section className={styles.text}>
-        <h1>{data.title}</h1>
-        <p>{data.subtitle}</p>
-        <Link href={data.buttonLink}>{data.buttonText}</Link>
+        {data.title && <h1>{data.title}</h1>}
+        {data.subtitle && <p>{data.subtitle}</p>}
+        {data.buttonText && data.buttonLink && (
+          <Link href={data.buttonLink} className={styles.button}>
+            {data.buttonText}
+          </Link>
+        )}
       </section>
     </div>
   );
