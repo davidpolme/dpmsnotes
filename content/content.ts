@@ -5,6 +5,20 @@ export const headerLinks = [
   { id: 4, label: "Blog", path: "/blog" },
 ];
 
+export const heroData = {
+  image: {
+    src: "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/character-dark-mode.png",
+    alt: "character_dark-mode",
+    width: 40,
+    height: 40,
+  },
+  title: "Hola, soy David",
+  subtitle: "Desarrollador de software Full Stack",
+  buttonText: "Inicia Aquí",
+  buttonLink: "/",
+};
+
+
 export const welcomeData = {
   title: "¡Hola! 👋",
   paragraph: `Soy David Polania, Full Stack Software Engineer apasionado por Golang, React, Cloud y AI/ML. 
