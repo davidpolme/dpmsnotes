@@ -1,0 +1,20 @@
+.cardGroup {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 25px 50px 25px;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .cardGroup {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .cardGroup {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
