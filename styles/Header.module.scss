@@ -7,15 +7,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
   box-shadow: 0 0 1px variables.$color_dark;
   padding: 0 variables.$padding_X;
   background: linear-gradient(
     to right,
-    variables.$color_contrast 0%,
-    variables.$color_dark 50%,
-    variables.$color_contrast 100%
+    rgba(variables.$color_contrast, 1) 0%,
+    rgba(variables.$color_dark, 1) 50%,
+    rgba(variables.$color_dark, 0.9) 100%
   );
+  backdrop-filter: blur(10px) saturate(150%);
 }
 
 .logo {
