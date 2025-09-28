@@ -18,26 +18,30 @@ type HeroData = {
 };
 
 type HeroProps = {
-  items: HeroData[];
+  data: HeroData;
 };
 
-export default function Hero({}: HeroProps) {
+export default function Hero({ data }: HeroProps) {
   return (
     <div className={styles.hero}>
-      <section className={styles.image}>
-        <Image
-          src="https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/character-dark-mode.png"
-          alt="character_dark-mode"
-          width={40}
-          height={40}
-        />
-      </section>
+      {data.image && (
+        <section className={styles.image}>
+          <Image
+            src={data.image.src}
+            alt={data.image.alt}
+            width={data.image.width}
+            height={data.image.height}
+          />
+        </section>
+      )}
       <section className={styles.text}>
-        <h1>Hola, soy David</h1>
-        <p>Desarrollador de software Full Stack</p>
-        <Link href="/notes" className={styles.button}>
-          Get Started
-        </Link>
+        {data.title && <h1>{data.title}</h1>}
+        {data.subtitle && <p>{data.subtitle}</p>}
+        {data.buttonText && data.buttonLink && (
+          <Link href={data.buttonLink} className={styles.button}>
+            {data.buttonText}
+          </Link>
+        )}
       </section>
     </div>
   );
