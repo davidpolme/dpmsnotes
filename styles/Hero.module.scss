@@ -59,15 +59,21 @@
     grid-template-rows: auto auto;
     text-align: center;
     margin-bottom: 2rem;
-  }
-
-  .hero .text {
-    margin-left: 0;
-    align-items: center;
-    margin-top: 2rem;
-  }
-
-  .hero .text a {
-    margin: 2rem 0 0 0;
-  }
+    background: variables.$background_color ;
+    .text {
+      margin-left: 0;
+      align-items: center;
+      margin-top: 2rem;
+      h1{
+        font-size: 2.5rem;
+      }
+      p{
+        font-size: 1.2rem;
+      }
+      a {
+        margin: 2rem 0 0 0;
+      padding: 0.5rem 1rem;
+      }
+    }
+  }  
 }
