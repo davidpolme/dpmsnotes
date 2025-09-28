@@ -19,7 +19,7 @@ export const sectionsData = [
     title: "Portfolio",
     description: "Explora algunos de mis proyectos en software y tecnología.",
     image:
-      "https://images.unsplash.com/photo-1592609931095-54a2168ae893?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/portfolio-dark-mode.png",
     alt: "Portfolio",
     link: "/portfolio",
   },
@@ -29,7 +29,7 @@ export const sectionsData = [
     description:
       "Lee mis artículos sobre desarrollo, tecnología y experiencias personales.",
     image:
-      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=2668&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/blog-dark-mode.png",
     alt: "Blog",
     link: "/blog",
   },
@@ -38,7 +38,8 @@ export const sectionsData = [
     title: "Conóceme",
     description:
       "Saber más sobre mí, mi experiencia y mis intereses fuera de la programación.",
-    image: "https://avatars.githubusercontent.com/u/17372233?v=4",
+    image:
+      "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/about-me-dark-mode.png",
     alt: "Acerca de mí",
     link: "/about-me",
   },

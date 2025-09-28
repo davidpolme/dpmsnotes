@@ -1,0 +1,73 @@
+@use "variables";
+
+.hero {
+  background: linear-gradient(
+    to bottom,
+    variables.$background_color_start 0%,
+    #0B0B25 25%,
+    variables.$background_color_mid 70%,
+    #0F0D2F 85%,
+    variables.$background_color_end 95%,
+    variables.$background_color_end 100%
+  );
+  color: variables.$color_light;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .image {
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-left: 5em;
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 2rem;
+      max-width: 600px;
+    }
+
+    a {
+      background-color: variables.$color_primary;
+      color: variables.$color_light;
+      padding: 0.75rem 1.5rem;
+      border-radius: variables.$border_radius;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      margin: 3rem 0 0 10rem;
+      &:hover {
+        background-color: variables.$color_primary_dark;
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .hero .text {
+    margin-left: 0;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .hero .text a {
+    margin: 2rem 0 0 0;
+  }
+}

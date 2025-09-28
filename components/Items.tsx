@@ -1,16 +1,11 @@
 "use client";
 import { useState, useMemo } from "react";
 import styles from "@/styles/Items.module.scss";
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import Filters from "./Filters";
+import CardGroup from "./CardGroup";
+import { CardItem } from "./Card";
 
-type Item = {
-  id: number;
-  title: string;
-  description: string;
-  image: StaticImageData | string;
-  alt: string;
-  link: string;
+type Item = CardItem & {
   slug?: string;
   date?: string;
   tags?: string[];
@@ -26,28 +21,14 @@ export default function Items({ data, filter = true }: ItemsProps) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredForTags = useMemo(() => {
-    if (!selectedCategory) return data;
-    return data.filter((item) => item.categories?.includes(selectedCategory));
-  }, [data, selectedCategory]);
-
-  const filteredForCategories = useMemo(() => {
-    if (!selectedTag) return data;
-    return data.filter((item) => item.tags?.includes(selectedTag));
-  }, [data, selectedTag]);
-
   const availableTags = useMemo(
-    () =>
-      Array.from(new Set(filteredForTags.flatMap((item) => item.tags || []))),
-    [filteredForTags]
+    () => Array.from(new Set(data.flatMap((item) => item.tags || []))),
+    [data]
   );
 
   const availableCategories = useMemo(
-    () =>
-      Array.from(
-        new Set(filteredForCategories.flatMap((item) => item.categories || []))
-      ),
-    [filteredForCategories]
+    () => Array.from(new Set(data.flatMap((item) => item.categories || []))),
+    [data]
   );
 
   const filteredData = useMemo(() => {
@@ -71,76 +52,16 @@ export default function Items({ data, filter = true }: ItemsProps) {
   return (
     <section className={styles.items}>
       {filter && (
-        <div className={styles.filters}>
-          {availableCategories.length > 0 && (
-            <select
-              value={selectedCategory || ""}
-              onChange={(e) => setSelectedCategory(e.target.value || null)}
-            >
-              <option value="">Todas las categorías</option>
-              {availableCategories.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
-          )}
-
-          {availableTags.length > 0 && (
-            <select
-              value={selectedTag || ""}
-              onChange={(e) => setSelectedTag(e.target.value || null)}
-            >
-              <option value="">Todos los tags</option>
-              {availableTags.map((tag) => (
-                <option key={tag} value={tag}>
-                  {tag}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
+        <Filters
+          categories={availableCategories}
+          tags={availableTags}
+          selectedCategory={selectedCategory}
+          selectedTag={selectedTag}
+          onCategoryChange={setSelectedCategory}
+          onTagChange={setSelectedTag}
+        />
       )}
-
-      <div className={styles.cardGroup}>
-        {filteredData.map((item) => {
-          const isExternal = item.link.startsWith("http");
-          const imgUrl =
-            typeof item.image === "string" ? item.image : item.image.src;
-
-          const cardStyle: React.CSSProperties & { [key: string]: string } = {
-            "--card-img": `url(${imgUrl})`,
-          };
-
-          return (
-            <Link
-              key={item.id}
-              href={item.link}
-              {...(isExternal
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-              className={styles.card}
-              style={cardStyle}
-            >
-              <div className={styles.imageWrap}>
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  style={{ objectFit: "cover", objectPosition: "center" }}
-                  className={styles.cardImage}
-                  priority={false}
-                />
-              </div>
-
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{item.title}</h3>
-                <p className={styles.cardDescription}>{item.description}</p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <CardGroup items={filteredData} />
     </section>
   );
 }
