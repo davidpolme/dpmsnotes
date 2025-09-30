@@ -1,4 +1,4 @@
-@use "variables";
+@use "variables" as v;
 
 .container {
   display: flex;
@@ -7,34 +7,72 @@
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-  background-color: #f9f9f9;
-  color: #333;
+
+  /* 🌙 Tema oscuro */
+  body.dark & {
+    background-color: v.$background_color_dark_mode;
+    color: v.$color_light_dark_mode;
+  }
+
+  /* ☀️ Tema claro */
+  body.light & {
+    background-color: v.$background_color_light_mode;
+    color: v.$color_light_light_mode;
+  }
 }
 
 .title {
   font-size: 6rem;
   font-weight: bold;
   margin: 0;
-  color: variables.$color_dark;
+
+  body.dark & {
+    color: v.$color_light_dark_mode;
+  }
+
+  body.light & {
+    color: v.$color_dark_light_mode;
+  }
 }
 
 .message {
   margin-top: 1rem;
   font-size: 1.25rem;
-  color: #555;
+
+  body.dark & {
+    color: v.$color_font_dark_mode;
+  }
+
+  body.light & {
+    color: v.$color_font_light_mode;
+  }
 }
 
 .link {
   margin-top: 2rem;
   padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  border-radius: v.$border_radius;
   text-decoration: none;
-  background-color: variables.$color_primary;
-  color: #fff;
   font-weight: bold;
   transition: background-color 0.2s ease;
 
-  &:hover {
-    background-color: variables.$color_primary_dark;
+  /* 🌙 Dark */
+  body.dark & {
+    background-color: v.$color_primary_dark_mode;
+    color: v.$color_light_dark_mode;
+
+    &:hover {
+      background-color: v.$color_primary_strong_dark_mode;
+    }
+  }
+
+  /* ☀️ Light */
+  body.light & {
+    background-color: v.$color_primary_light_mode;
+    color: v.$color_light_light_mode;
+
+    &:hover {
+      background-color: v.$color_primary_strong_light_mode;
+    }
   }
 }

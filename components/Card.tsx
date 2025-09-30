@@ -1,13 +1,20 @@
 "use client";
 import styles from "@/styles/Card.module.scss";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image"; // 👈 Importa StaticImageData
 import Link from "next/link";
+import { useThemeStore } from "@/store/themeStore";
 
 export type CardItem = {
   id: number;
   title: string;
   description: string;
-  image: StaticImageData | string;
+  image:
+    | string
+    | StaticImageData
+    | {
+        dark: string | StaticImageData;
+        light: string | StaticImageData;
+      };
   alt: string;
   link: string;
 };
@@ -20,8 +27,19 @@ export default function Card({
   alt,
   link,
 }: CardItem) {
+  const darkMode = useThemeStore((state) => state.darkMode);
+
+  // 🔹 Helper interno para resolver imagen
+  const resolveImage = (): string => {
+    if (typeof image === "string") return image;
+    if ("dark" in image && "light" in image) {
+      return darkMode ? (image.dark as string) : (image.light as string);
+    }
+    return (image as StaticImageData).src;
+  };
+
+  const imgUrl = resolveImage();
   const isExternal = link.startsWith("http");
-  const imgUrl = typeof image === "string" ? image : image.src;
 
   const cardStyle: React.CSSProperties & { [key: string]: string } = {
     "--card-img": `url(${imgUrl})`,
@@ -37,7 +55,7 @@ export default function Card({
     >
       <div className={styles.imageWrap}>
         <Image
-          src={image}
+          src={imgUrl}
           alt={alt}
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

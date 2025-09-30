@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import "./../styles/globals.scss";
 import { headerLinks } from "@/content/content";
 import { Roboto } from "next/font/google";
+import ThemeInitializer from "@/components/Theme";
 
 const roboto = Roboto({
   weight: ["400", "700"],
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={roboto.variable}>
+        <ThemeInitializer />{" "}
+        {/* Se encarga de setear "dark" o "light" en body */}
         <Header links={headerLinks} />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

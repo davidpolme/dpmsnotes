@@ -1,13 +1,24 @@
-@use "variables";
+@use "variables" as v;
 
 body {
   font-family: var(--font-roboto), sans-serif;
   margin: 0;
-  background-color: variables.$background_color;
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  /* 🌙 Tema oscuro */
+  &.dark {
+    background-color: v.$background_color_dark_mode;
+    color: v.$color_font_dark_mode;
+  }
+
+  /* ☀️ Tema claro */
+  &.light {
+    background-color: v.$background_color_light_mode;
+    color: v.$color_font_light_mode;
+  }
 }
 
 html,
@@ -16,7 +27,7 @@ body {
 }
 
 html {
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 main {
@@ -32,11 +43,10 @@ pre {
   color: #1e293b;
   font-size: 0.9rem;
   line-height: 1.5;
-
-    white-space: pre-wrap; 
+  white-space: pre-wrap;
   word-wrap: break-word;
 }
 
 code {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }

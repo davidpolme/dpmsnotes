@@ -1,4 +1,4 @@
-@use "variables";
+@use "variables" as v;
 
 .header {
   position: sticky;
@@ -7,15 +7,34 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 1px variables.$color_dark;
-  padding: 0 variables.$padding_X;
-  background: linear-gradient(
-    to right,
-    rgba(variables.$color_contrast, 1) 0%,
-    rgba(variables.$color_dark, 1) 50%,
-    rgba(variables.$color_dark, 0.9) 100%
-  );
+  padding: 0 v.$padding_x;
+  box-shadow: 0 0 1px;
+
   backdrop-filter: blur(10px) saturate(150%);
+
+  /* 🎨 Tema oscuro */
+  body.dark & {
+    background: linear-gradient(
+      to right,
+      v.$color_contrast_dark_mode 0%,
+      v.$color_dark_dark_mode 50%,
+      rgba(v.$color_dark_dark_mode, 0.8) 100%
+    );
+    color: v.$color_light_dark_mode;
+    box-shadow: 0 0 1px v.$color_dark_dark_mode;
+  }
+
+  /* 🎨 Tema claro */
+  body.light & {
+    background: linear-gradient(
+      to right,
+      v.$color_contrast_light_mode 0%,
+      v.$color_dark_light_mode 50%,
+      rgba(v.$color_dark_light_mode, 0.8) 100%
+    );
+    color: v.$color_light_light_mode;
+    box-shadow: 0 0 1px v.$color_dark_light_mode;
+  }
 }
 
 .logo {
@@ -25,22 +44,36 @@
 }
 
 .title {
-  color: variables.$color_light;
   font-weight: lighter;
   font-family: "Pacifico", cursive;
   margin: 0;
   font-size: clamp(1.5rem, 5vw, 1rem);
   text-decoration: none;
+
+  body.dark & {
+    color: v.$color_light_dark_mode;
+  }
+
+  body.light & {
+    color: v.$color_light_light_mode;
+  }
 }
 
 .nav {
   display: flex;
   align-items: center;
   margin: 0;
-  color: variables.$color_light;
+
+  body.dark & {
+    color: v.$color_light_dark_mode;
+  }
+
+  body.light & {
+    color: v.$color_light_light_mode;
+  }
 
   @media (max-width: 768px) {
-    display: none; 
+    display: none;
   }
 }
 
@@ -52,8 +85,15 @@
 
   a {
     text-decoration: none;
-    color: white;
     font-weight: bold;
+
+    body.dark & {
+      color: v.$color_light_dark_mode;
+    }
+
+    body.light & {
+      color: v.$color_light_light_mode;
+    }
 
     &:hover {
       text-decoration: underline;
@@ -70,10 +110,17 @@
   span {
     height: 3px;
     width: 25px;
-    background: white;
     margin: 4px;
     border-radius: 2px;
     transition: all 0.3s ease;
+
+    body.dark & {
+      background: v.$color_light_dark_mode;
+    }
+
+    body.light & {
+      background: v.$color_light_light_mode;
+    }
   }
 
   @media (max-width: 768px) {
@@ -85,20 +132,38 @@
 .mobileMenu {
   display: none;
   flex-direction: column;
-  background: variables.$color_dark;
   position: absolute;
   top: 60px;
   right: 0;
   width: 200px;
   border-radius: 0 0 8px 8px;
 
+  body.dark & {
+    background: v.$color_dark_dark_mode;
+  }
+
+  body.light & {
+    background: v.$color_dark_light_mode;
+  }
+
   a {
     padding: 1rem;
-    color: white;
     text-decoration: none;
 
-    &:hover {
-      background: variables.$color_contrast;
+    body.dark & {
+      color: v.$color_light_dark_mode;
+
+      &:hover {
+        background: v.$color_contrast_dark_mode;
+      }
+    }
+
+    body.light & {
+      color: v.$color_light_light_mode;
+
+      &:hover {
+        background: v.$color_contrast_light_mode;
+      }
     }
   }
 }
