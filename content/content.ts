@@ -9,7 +9,7 @@ export const heroData = {
   image: {
     dark: "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/character-dark-mode.png",
     light:
-      "https://dpmsnotes.s3.us-east-1.amazonaws.com/illustrations/character-light-mode.png",
+      "https://sdmntprcentralus.oaiusercontent.com/files/00000000-9084-61f5-a638-99c849552cb3/raw?se=2025-09-28T21%3A55%3A42Z&sp=r&sv=2024-08-04&sr=b&scid=26177006-5c85-59e6-bb04-317e9eb7786b&skoid=b0fd38cc-3d33-418f-920e-4798de4acdd1&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-09-28T13%3A13%3A34Z&ske=2025-09-29T13%3A13%3A34Z&sks=b&skv=2024-08-04&sig=u7LoYWLn%2BLSXAcwuk%2BrYZpuVMtCGq4XKUQdyiOEFo/E%3D",
     alt: "character",
     width: 40,
     height: 40,

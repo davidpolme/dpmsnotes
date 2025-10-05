@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "variables";
 
 .header {
   position: sticky;
@@ -7,33 +7,87 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 v.$padding_x;
-  box-shadow: 0 0 1px;
+  padding: 0 variables.$padding_x;
+  transition: background 0.3s ease, color 0.3s ease;
 
-  backdrop-filter: blur(10px) saturate(150%);
-
-  /* 🎨 Tema oscuro */
-  body.dark & {
+  /* 🌙 DARK MODE */
+  &_dark_mode {
     background: linear-gradient(
       to right,
-      v.$color_contrast_dark_mode 0%,
-      v.$color_dark_dark_mode 50%,
-      rgba(v.$color_dark_dark_mode, 0.8) 100%
+      rgba(variables.$color_contrast_dark_mode, 1) 0%,
+      rgba(variables.$color_dark_dark_mode, 1) 50%,
+      rgba(variables.$color_dark_dark_mode, 0.8) 100%
     );
-    color: v.$color_light_dark_mode;
-    box-shadow: 0 0 1px v.$color_dark_dark_mode;
+    backdrop-filter: blur(10px) saturate(150%);
+
+    .title {
+      color: variables.$color_light_dark_mode;
+    }
+
+    .nav {
+      color: variables.$color_light_dark_mode;
+    }
+
+    .item a {
+      color: variables.$color_light_dark_mode;
+    }
+
+    .hamburger span {
+      background: variables.$color_light_dark_mode;
+    }
+
+    .mobileMenu {
+      background: variables.$color_dark_dark_mode;
+
+      a {
+        color: variables.$color_light_dark_mode;
+
+        &:hover {
+          background: variables.$color_contrast_dark_mode;
+        }
+      }
+    }
   }
 
-  /* 🎨 Tema claro */
-  body.light & {
-    background: linear-gradient(
-      to right,
-      v.$color_contrast_light_mode 0%,
-      v.$color_dark_light_mode 50%,
-      rgba(v.$color_dark_light_mode, 0.8) 100%
-    );
-    color: v.$color_light_light_mode;
-    box-shadow: 0 0 1px v.$color_dark_light_mode;
+  /* ☀️ LIGHT MODE */
+  &_light_mode {
+    background: white;
+    box-shadow: 0 0 1px variables.$color_dark_dark_mode;
+
+    .title {
+      color: variables.$color_contrast_light_mode; // logo azul
+    }
+
+    .nav {
+      color: variables.$color_font_light_mode;
+    }
+
+    .item a {
+      color: variables.$color_font_light_mode;
+
+      &:hover {
+        color: variables.$color_primary_light_mode;
+        text-decoration: none;
+      }
+    }
+
+    .hamburger span {
+      background: variables.$color_font_light_mode; // líneas negras
+    }
+
+    .mobileMenu {
+      background: white;
+      border: 1px solid variables.$color_primary_light_mode;
+
+      a {
+        color: variables.$color_font_light_mode;
+
+        &:hover {
+          background: variables.$color_primary_light_mode;
+          color: white;
+        }
+      }
+    }
   }
 }
 
@@ -49,28 +103,12 @@
   margin: 0;
   font-size: clamp(1.5rem, 5vw, 1rem);
   text-decoration: none;
-
-  body.dark & {
-    color: v.$color_light_dark_mode;
-  }
-
-  body.light & {
-    color: v.$color_light_light_mode;
-  }
 }
 
 .nav {
   display: flex;
   align-items: center;
   margin: 0;
-
-  body.dark & {
-    color: v.$color_light_dark_mode;
-  }
-
-  body.light & {
-    color: v.$color_light_light_mode;
-  }
 
   @media (max-width: 768px) {
     display: none;
@@ -86,18 +124,7 @@
   a {
     text-decoration: none;
     font-weight: bold;
-
-    body.dark & {
-      color: v.$color_light_dark_mode;
-    }
-
-    body.light & {
-      color: v.$color_light_light_mode;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
+    transition: color 0.2s ease;
   }
 }
 
@@ -113,14 +140,6 @@
     margin: 4px;
     border-radius: 2px;
     transition: all 0.3s ease;
-
-    body.dark & {
-      background: v.$color_light_dark_mode;
-    }
-
-    body.light & {
-      background: v.$color_light_light_mode;
-    }
   }
 
   @media (max-width: 768px) {
@@ -138,36 +157,12 @@
   width: 200px;
   border-radius: 0 0 8px 8px;
 
-  body.dark & {
-    background: v.$color_dark_dark_mode;
-  }
-
-  body.light & {
-    background: v.$color_dark_light_mode;
-  }
-
   a {
     padding: 1rem;
     text-decoration: none;
-
-    body.dark & {
-      color: v.$color_light_dark_mode;
-
-      &:hover {
-        background: v.$color_contrast_dark_mode;
-      }
-    }
-
-    body.light & {
-      color: v.$color_light_light_mode;
-
-      &:hover {
-        background: v.$color_contrast_light_mode;
-      }
-    }
   }
-}
 
-.mobileMenu.open {
-  display: flex;
+  &.open {
+    display: flex;
+  }
 }

@@ -1,18 +1,13 @@
-$background_color_light_mode: #ffffff;
-$background_color_start_light_mode: #f5f5f5;
-$background_color_mid_light_mode: #eeeeee;
-$background_color_end_light_mode: #e5e5e5;
+$background_color_light_mode: #FFFCF7;
+$background_color_start_light_mode: #FFFCF7;
+$background_color_mid_light_mode: #FFFCF7;
+$background_color_end_light_mode: #FFFCF7;
 
-$color_light_light_mode: #000; // texto en modo claro
+$color_light_light_mode: #ffffff;
 
-$color_primary_light_mode: #4446FF;          // azul principal
-$color_primary_strong_light_mode: #2e2fff;  // variante más fuerte
+$color_primary_light_mode: #4446FF;
+$color_primary_strong_light_mode: #2e2fff;
 
-$color_dark_light_mode: #f0f0f0;            // gris claro para fondos
+$color_dark_light_mode: #000;
 $color_contrast_light_mode: #4446FF;
 $color_font_light_mode: #000;
-
-$padding_x_light_mode: 2rem;
-$padding_y_light_mode: 1rem;
-$border_radius_light_mode: 0.5rem;
-$max_width_light_mode: 1200px;

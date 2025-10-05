@@ -1,45 +1,44 @@
-@use "variables" as v;
+@use "variables";
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: inherit;
+  position: relative;
 
-  /* 🌙 Tema oscuro */
-  body.dark & {
+  /* --- Dark Mode --- */
+  &_dark_mode {
     background: linear-gradient(
       to bottom,
-      v.$background_color_start_dark_mode 0%,
+      variables.$background_color_start_dark_mode 0%,
       #0B0B25 25%,
-      v.$background_color_mid_dark_mode 70%,
+      variables.$background_color_mid_dark_mode 70%,
       #0F0D2F 85%,
-      v.$background_color_end_dark_mode 95%,
-      v.$background_color_end_dark_mode 100%
+      variables.$background_color_end_dark_mode 100%
     );
-    color: v.$color_light_dark_mode;
+    color: variables.$color_light_dark_mode;
   }
 
-  /* ☀️ Tema claro */
-  body.light & {
+  /* --- Light Mode --- */
+  &_light_mode {
     background: linear-gradient(
       to bottom,
-      v.$background_color_start_light_mode 0%,
-      #f5f5f5 25%,
-      v.$background_color_mid_light_mode 70%,
-      #eaeaea 85%,
-      v.$background_color_end_light_mode 95%,
-      v.$background_color_end_light_mode 100%
+      variables.$background_color_start_light_mode 0%,
+      variables.$background_color_mid_light_mode 70%,
+      variables.$background_color_end_light_mode 100%
     );
-    color: v.$color_light_light_mode;
+    color: variables.$color_dark_light_mode;
   }
 
+  /* --- Imagen --- */
   .image {
     img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 
+  /* --- Texto general --- */
   .text {
     display: flex;
     flex-direction: column;
@@ -47,80 +46,96 @@
     align-items: start;
     margin-left: 5em;
 
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+    &.hero_dark_mode {
+      color: variables.$color_light_dark_mode;
     }
 
-    p {
-      font-size: 1.5rem;
-      max-width: 600px;
+    &.hero_light_mode {
+      color: variables.$color_dark_light_mode;
+    }
+  }
+
+  /* --- Título --- */
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+
+    &.hero_dark_mode {
+      color: variables.$color_light_dark_mode;
     }
 
-    a {
-      padding: 0.75rem 1.5rem;
-      border-radius: v.$border_radius;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      margin: 3rem 0 0 10rem;
+    &.hero_light_mode {
+      color: variables.$color_dark_light_mode;
+    }
+  }
 
-      /* 🌙 Dark */
-      body.dark & {
-        background-color: v.$color_primary_dark_mode;
-        color: v.$color_light_dark_mode;
+  /* --- Subtítulo --- */
+  p {
+    font-size: 1.5rem;
+    max-width: 600px;
 
-        &:hover {
-          background-color: v.$color_primary_strong_dark_mode;
-        }
+    &.hero_dark_mode {
+      color: variables.$color_light_dark_mode;
+    }
+
+    &.hero_light_mode {
+      color: variables.$color_dark_light_mode;
+    }
+  }
+
+  /* --- Botón --- */
+  .button {
+    margin: 3rem 0 0 10rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: variables.$border_radius;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &.hero_dark_mode {
+      background-color: variables.$color_primary_dark_mode;
+      color: variables.$color_light_dark_mode;
+
+      &:hover {
+        background-color: variables.$color_contrast_dark_mode;
       }
+    }
 
-      /* ☀️ Light */
-      body.light & {
-        background-color: v.$color_primary_light_mode;
-        color: v.$color_light_light_mode;
+    &.hero_light_mode {
+      background-color: variables.$color_primary_light_mode;
+      color: variables.$color_dark_light_mode;
 
-        &:hover {
-          background-color: v.$color_primary_strong_light_mode;
-        }
+      &:hover {
+        background-color: variables.$color_contrast_light_mode;
       }
     }
   }
 }
 
-/* 📱 Mobile & tablet */
+/* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
     text-align: center;
     margin-bottom: 2rem;
-
-    body.dark & {
-      background: v.$background_color_dark_mode;
-    }
-
-    body.light & {
-      background: v.$background_color_light_mode;
-    }
 
     .text {
       margin-left: 0;
       align-items: center;
       margin-top: 2rem;
+    }
 
-      h1 {
-        font-size: 2.5rem;
-      }
+    h1 {
+      font-size: 2.5rem;
+    }
 
-      p {
-        font-size: 1.2rem;
-      }
+    p {
+      font-size: 1.2rem;
+    }
 
-      a {
-        margin: 2rem 0 0 0;
-        padding: 0.5rem 1rem;
-      }
+    .button {
+      margin: 2rem 0 0 0;
+      padding: 0.5rem 1rem;
     }
   }
 }

@@ -6,18 +6,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: background 0.3s ease, color 0.3s ease;
 
   /* 🌙 Tema oscuro */
   &.dark {
     background-color: v.$background_color_dark_mode;
-    color: v.$color_font_dark_mode;
   }
 
   /* ☀️ Tema claro */
   &.light {
     background-color: v.$background_color_light_mode;
-    color: v.$color_font_light_mode;
   }
 }
 
@@ -39,7 +36,6 @@ pre {
   overflow-x: auto;
   padding: 1rem;
   border-radius: 8px;
-  background: #f8fafc;
   color: #1e293b;
   font-size: 0.9rem;
   line-height: 1.5;

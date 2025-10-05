@@ -1,11 +1,6 @@
-// Variables generales
 $padding_x: 2rem;
 $padding_y: 1rem;
 $border_radius: 0.5rem;
 $max_width: 1200px;
-
-// Reexporta los temas
-@forward "variables_dark_mode.scss";
 @forward "variables_light_mode.scss";
-
-
+@forward "variables_dark_mode.scss";

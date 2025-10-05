@@ -1,34 +1,18 @@
-@use "variables.scss" as v;
+@use "variables";
 
 .footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: v.$padding_y v.$padding_x;
-
-  /* 🎨 Tema oscuro */
-  body.dark & {
-    background: linear-gradient(
-      to right,
-      v.$color_contrast_dark_mode 0%,
-      v.$color_contrast_dark_mode 5%,
-      v.$color_dark_dark_mode 65%,
-      v.$color_dark_dark_mode 100%
-    );
-    color: v.$color_light_dark_mode;
-  }
-
-  /* 🎨 Tema claro */
-  body.light & {
-    background: linear-gradient(
-      to right,
-      v.$color_contrast_light_mode 0%,
-      v.$color_contrast_light_mode 5%,
-      v.$color_dark_light_mode 65%,
-      v.$color_dark_light_mode 100%
-    );
-    color: v.$color_light_light_mode;
-  }
+  padding: variables.$padding_y variables.$padding_x;
+  background: linear-gradient(
+    to right,
+    variables.$color_contrast_dark_mode 0%,
+    variables.$color_contrast_dark_mode 5%,
+    variables.$color_dark_dark_mode 65%,
+    variables.$color_dark_dark_mode 100%
+  );
+  color: variables.$color_light_dark_mode;
 }
 
 .logo {
@@ -60,16 +44,8 @@
       margin: 5px 0;
 
       a {
+        color: variables.$color_light_dark_mode;
         text-decoration: none;
-
-        /* 🎨 Colores dinámicos */
-        body.dark & {
-          color: v.$color_light_dark_mode;
-        }
-
-        body.light & {
-          color: v.$color_light_light_mode;
-        }
 
         &:hover {
           text-decoration: underline;

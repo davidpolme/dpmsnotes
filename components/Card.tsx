@@ -29,7 +29,6 @@ export default function Card({
 }: CardItem) {
   const darkMode = useThemeStore((state) => state.darkMode);
 
-  // 🔹 Helper interno para resolver imagen
   const resolveImage = (): string => {
     if (typeof image === "string") return image;
     if ("dark" in image && "light" in image) {
@@ -50,7 +49,7 @@ export default function Card({
       key={id}
       href={link}
       {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className={styles.card}
+      className={`${styles.card} ${darkMode ? styles.card_dark_mode : styles.card_light_mode}`}
       style={cardStyle}
     >
       <div className={styles.imageWrap}>
@@ -64,9 +63,25 @@ export default function Card({
         />
       </div>
 
-      <div className={styles.cardContent}>
-        <h3 className={styles.cardTitle}>{title}</h3>
-        <p className={styles.cardDescription}>{description}</p>
+      <div
+        className={`${styles.cardContent} ${
+          darkMode ? styles.card_dark_mode : styles.card_light_mode
+        }`}
+      >
+        <h3
+          className={`${styles.cardTitle} ${
+            darkMode ? styles.card_dark_mode : styles.card_light_mode
+          }`}
+        >
+          {title}
+        </h3>
+        <p
+          className={`${styles.cardDescription} ${
+            darkMode ? styles.card_dark_mode : styles.card_light_mode
+          }`}
+        >
+          {description}
+        </p>
       </div>
     </Link>
   );

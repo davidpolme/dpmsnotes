@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "variables";
 
 .filters {
   display: flex;
@@ -8,40 +8,22 @@
 
   select {
     padding: 0.5rem 1rem;
-    border-radius: v.$border_radius;
+    border-radius: variables.$border_radius;
+    border: 1px solid #ccc;
+    background-color: #fff;
     font-size: 0.9rem;
     cursor: pointer;
     min-width: 180px;
     flex: 1;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
-    /* 🌙 Dark */
-    body.dark & {
-      background-color: v.$background_color_mid_dark_mode;
-      color: v.$color_light_dark_mode;
-      border: 1px solid v.$color_contrast_dark_mode;
-
-      &:focus {
-        outline: none;
-        border-color: v.$color_primary_dark_mode;
-      }
-    }
-
-    /* ☀️ Light */
-    body.light & {
-      background-color: v.$background_color_light_mode;
-      color: v.$color_font_light_mode;
-      border: 1px solid #ccc;
-
-      &:focus {
-        outline: none;
-        border-color: v.$color_primary_light_mode;
-      }
+    &:focus {
+      outline: none;
+      border-color: variables.$color_primary;
     }
   }
 }
 
-/* 📱 Mobile */
+/* mobile */
 @media (max-width: 600px) {
   .filters {
     flex-direction: column;
